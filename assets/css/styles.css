@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: white;
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: #7B68EE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.logo-text h1 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+.logo-text p {
+    font-size: 12px;
+    color: #666;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.theme-toggle {
+    background: #f0f0f0;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.theme-toggle:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.follow-btn {
+    background: #E60023; /* Pinterest red */
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 3px 10px rgba(230, 0, 35, 0.25);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.follow-btn:hover {
+    background: #C2001B;
+    transform: translateY(-1px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: #2d2d2d;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .logo-text h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .logo-text p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .theme-toggle {
+    background: #404040;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #505050;
+}
+
+body.dark-mode .topics {
+    background: #1a1a1a;
+}
+
+body.dark-mode .topics h3,
+body.dark-mode .about h3,
+body.dark-mode .newsletter h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .topic-card {
+    background: #2d2d2d;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .topic-card h4 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .topic-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .about {
+    background: #252525;
+}
+
+body.dark-mode .about-text {
+    color: #b0b0b0;
+}
+
+body.dark-mode .stat-number {
+    color: #e0e0e0;
+}
+
+body.dark-mode .stat-label {
+    color: #b0b0b0;
+}
+
+body.dark-mode .newsletter {
+    background: #1a1a1a;
+}
+
+body.dark-mode .newsletter p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .newsletter-form input {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+    color: #e0e0e0;
+}
+
+body.dark-mode .newsletter-form input::placeholder {
+    color: #808080;
+}
+
+body.dark-mode .privacy-text {
+    color: #808080;
+}
+
+body.dark-mode footer {
+    background: #252525;
+    color: #b0b0b0;
+}
+
+body.dark-mode .footer-links a {
+    color: #b0b0b0;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: #7B68EE;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #7B68EE 0%, #9B7FDB 50%, #B89BE0 100%);
+    padding: 100px 50px;
+    text-align: center;
+    color: white;
+}
+
+.hero > * {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 40px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    opacity: 0.95;
+}
+
+.cta-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    background: white;
+    color: #7B68EE;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.9);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Topics Section */
+.topics {
+    padding: 80px 50px;
+    background: #F8F9FA;
+}
+
+.topics h3 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2C3E50;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.topic-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.topic-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.topic-card h4 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #2C3E50;
+}
+
+.topic-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about {
+    padding: 80px 50px;
+    background: #E8E9F3;
+    text-align: center;
+}
+
+.about h3 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2C3E50;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 80px 50px;
+    background: white;
+    text-align: center;
+}
+
+/* Popular Pins Strip */
+.popular-pins {
+    padding: 40px 50px;
+    background: #ffffff;
+}
+
+.popular-pins h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+.pin-list {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pin-card {
+    background: #F8F9FA;
+    color: #2C3E50;
+    padding: 12px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.newsletter h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+.newsletter p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    background: #2C3E50;
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #1a252f;
+}
+
+.privacy-text {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Footer */
+footer {
+    background: #F8F9FA;
+    padding: 30px 50px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #7B68EE;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 16px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .topics, .about, .newsletter {
+        padding: 50px 20px;
+    }
+
+    .stats {
+        gap: 40px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+
+    /* Make topic grid strictly single-column on tablets/phones */
+    .topic-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Soften cards for mobile */
+    .topic-card {
+        padding: 24px;
+    }
+
+    .topic-icon {
+        font-size: 32px;
+    }
+
+    .topic-card h4 {
+        font-size: 20px;
+    }
+
+    .topic-card p {
+        font-size: 14px;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+
+    .logo-text p {
+        display: none;
+    }
+
+    .follow-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    .hero-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cta-btn {
+        width: 100%;
+        padding: 14px 18px;
+    }
+
+    .topics, .about, .newsletter {
+        padding: 40px 16px;
+    }
+
+    .stats {
+        gap: 24px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
